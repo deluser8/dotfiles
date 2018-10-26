@@ -1,4 +1,4 @@
-export DOTFILES=$HOME/dotfiles
+export DOTFILES=$HOME/.dotfiles
 export ZSH_CUSTOM=$DOTFILES/zsh
 source $ZSH_CUSTOM/antigen.zsh
 

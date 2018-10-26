@@ -30,6 +30,9 @@ augroup mixin
     set encoding=utf-8
 augroup end
 
+augroup solveesc
+    inoremap jk <esc>
+augroup end
 
 " Write file {{{
 augroup write_file
