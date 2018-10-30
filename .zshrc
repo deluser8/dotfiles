@@ -14,5 +14,7 @@ unset config_file
 # apply antigen configurations
 # remember that all configurations above will be cached
 antigen apply
+# enable shell integration only when using iTerm2
+$DOTFILES/bin/isiterm2 && source $DOTFILES/iterm2/shell-integration
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
