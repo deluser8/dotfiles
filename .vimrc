@@ -136,6 +136,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/L9'
 Plug 'othree/vim-autocomplpop'
 
+" fzf
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 call plug#end()
 " }}}
 
