@@ -8,12 +8,13 @@ for config_file ($ZSH_CUSTOM/common/*.zsh(N)); do
 done
 unset config_file
 
-# load extra configurations
-# test -e "${HOME}/.extra" && source "$HOME/.extra"
-
 # apply antigen configurations
 # remember that all configurations above will be cached
 antigen apply
+
+#load extra configurations
+test -e "${HOME}/.extra" && source "$HOME/.extra"
+
 # enable shell integration only when using iTerm2
 $DOTFILES/bin/isiterm2 && source $DOTFILES/iterm2/shell-integration
 

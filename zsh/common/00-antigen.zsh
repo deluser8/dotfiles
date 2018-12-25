@@ -4,7 +4,6 @@ echo ZSH_CUSTOM
 echo $ZSH_CUSTOM
 echo ZSH_CUSTOM
 antigen bundles <<EOF
-    command-not-found
     colored-man-pages
     colorize
     docker
@@ -16,6 +15,8 @@ antigen bundles <<EOF
     tmux
     z
     copyfile
+    encode64
+    urltools
 
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-autosuggestions
@@ -23,7 +24,7 @@ antigen bundles <<EOF
 
     $ZSH_CUSTOM/plugin/fzf
 EOF
-
+# command-not-found
 #    $ZSH_CUSTOM/plugin/thefuck
 # load the theme
 antigen theme candy

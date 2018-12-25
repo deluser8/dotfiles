@@ -96,7 +96,7 @@ autocmd!
     " with just one key binding.
     " `s{char}{label}`
     " nmap s <Plug>(easymotion-overwin-f)
-    nmap s <Plug>(easymotion-overwin-f2)
+    "    nmap s <Plug>(easymotion-overwin-f2)
     
     " hjkl motions
     map <Leader>h <Plug>(easymotion-linebackward)
@@ -126,6 +126,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'Yggdroot/indentLine'
+ Plug 'luochen1990/rainbow'
 
 " Code navigation
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -133,8 +134,11 @@ Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
 
 " Auto complete
-Plug 'vim-scripts/L9'
-Plug 'othree/vim-autocomplpop'
+" Plug 'vim-scripts/L9'
+" Plug 'vim-scripts/AutoComplPop'
+Plug 'Valloric/YouCompleteMe'
+" Plug 'davidhalter/jedi-vim'
+"Plug 'othree/vim-autocomplpop'
 
 " fzf
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script

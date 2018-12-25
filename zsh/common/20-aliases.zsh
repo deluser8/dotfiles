@@ -55,3 +55,11 @@ alias clean-docker-image='docker images | grep "^<none>" | awk "{print $3}" | xa
 alias run-ctf-box='docker run -dit --name ctf-box-$(basename $(pwd)) --rm --privileged -p 10022:22 -P -v $PWD:/root/workspace ripples/ctf-box'
 
 alias clear-proxy='unset http_proxy https_proxy'
+
+# python
+#
+alias py=python3
+alias py2=python
+alias py3=python3
+# vim
+alias v=vim
