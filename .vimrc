@@ -22,8 +22,8 @@ augroup mixin
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
-    set shiftround
-    set expandtab
+    set shiftround 
+	set expandtab
     set helplang=cn
     set ttymouse=xterm2
     set termencoding=utf-8
@@ -95,7 +95,9 @@ autocmd!
     " Jump to anywhere you want with minimal keystrokes,
     " with just one key binding.
     " `s{char}{label}`
-    " nmap s <Plug>(easymotion-overwin-f)
+    nmap s <Plug>(easymotion-bd-w)
+    nmap w <Plug>(easymotion-w)
+    nmap b <Plug>(easymotion-b)
     "    nmap s <Plug>(easymotion-overwin-f2)
     
     " hjkl motions
