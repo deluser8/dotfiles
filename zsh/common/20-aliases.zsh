@@ -63,3 +63,6 @@ alias py2=python
 alias py3=python3
 # vim
 alias v=vim
+
+## ag
+alias agb="ag -A 5 -B 5"
