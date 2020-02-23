@@ -16,6 +16,8 @@ alias hosts='sudo $EDITOR /etc/hosts'
 
 alias ag='ag -f --hidden'
 
+alias gch='git clone --depth=1'
+
 # use coreutils `ls` if possible…
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
@@ -56,13 +58,16 @@ alias run-ctf-box='docker run -dit --name ctf-box-$(basename $(pwd)) --rm --priv
 
 alias clear-proxy='unset http_proxy https_proxy'
 
+alias typora="open -a typora"
+
+
 # python
 #
 alias py=python3
 alias py2=python
 alias py3=python3
 # vim
-alias v=vim
+alias v=nvim
 
 ## ag
 alias agb="ag -A 5 -B 5"

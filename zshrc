@@ -14,8 +14,10 @@ antigen apply
 
 #load extra configurations
 test -e "${HOME}/.extra" && source "$HOME/.extra"
-
-# enable shell integration only when using iTerm2
-$DOTFILES/bin/isiterm2 && source $DOTFILES/iterm2/shell-integration
-
+eval $(thefuck --alias) 
+# # enable shell integration only when using iTerm2
+# $DOTFILES/bin/isiterm2 && source $DOTFILES/iterm2/shell-integration
+# 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# alias gcd1="git clone --depth=1"

@@ -1,8 +1,6 @@
 # load the oh-my-zsh's library
 antigen use oh-my-zsh
-echo ZSH_CUSTOM
-echo $ZSH_CUSTOM
-echo ZSH_CUSTOM
+echo "Ever get that feeling of Déjà vu?"
 antigen bundles <<EOF
     colored-man-pages
     colorize

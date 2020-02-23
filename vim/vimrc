@@ -4,17 +4,18 @@ set modelines=4
 let mapleader=","
 
 augroup encoding
-
     autocmd!
     set encoding=utf-8 nobomb
     set fileencodings=utf-8,ucs-bom,utf-16,gbk,big5,gb18030,latin1,cp936
 augroup end
+
 augroup mixin
     autocmd!
-
     syntax on
     set ruler
-    set number
+" turn hybrid line numbers on
+    set number relativenumber
+    set nu rnu
     set showcmd
     set incsearch
     set hlsearch
@@ -25,7 +26,10 @@ augroup mixin
     set shiftround 
 	set expandtab
     set helplang=cn
-    set ttymouse=xterm2
+
+    if !has('nvim')
+        set ttymouse=xterm2
+    endif
     set termencoding=utf-8
     set encoding=utf-8
 augroup end
@@ -43,6 +47,13 @@ augroup write_file
     cmap w!! w !sudo tee %
 augroup end
                      " }}}
+
+augroup nerdtree2
+    autocmd StdinReadPre * let s:std_in=1
+    
+    " auto start nerdtree when open vim without target file
+    "    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+augroup end
 
 " NERDTree {{{
 augroup nerdtree_config
@@ -69,6 +80,27 @@ augroup nerdtree_config
     call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 augroup end
 " }}}
+"
+" fzf keymapping
+augroup fzf_mapping
+    command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+    
+    command! -bang -nargs=* Ag
+      \ call fzf#vim#ag(<q-args>,
+      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \                 <bang>0)
+    nnoremap <silent> <space>ff :Files<CR>
+
+    nnoremap <silent> <space>aa :Ag<CR>
+augroup end
+
+" jump previous buffer
+augroup buffer_mapping
+    nnoremap <silent> <space>bb :buffer #<CR>
+augroup end
+
 
 " Search {{{
 augroup search_config
@@ -121,31 +153,72 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" 
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+
+
 " Load plugins {{{
 call plug#begin('~/.vim/plugged')
 
 " Beautify
- Plug 'vim-airline/vim-airline'
- Plug 'vim-airline/vim-airline-themes'
- Plug 'Yggdroot/indentLine'
- Plug 'luochen1990/rainbow'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+Plug 'luochen1990/rainbow'
 
 " Code navigation
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
+" pair brackets
+Plug 'jiangmiao/auto-pairs'
 
 " Auto complete
 " Plug 'vim-scripts/L9'
 " Plug 'vim-scripts/AutoComplPop'
-Plug 'Valloric/YouCompleteMe'
+
+if !has('nvim')
+    Plug 'Valloric/YouCompleteMe'
+elseif has('nvim')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
+
+" support tmux complete
+Plug 'wellle/tmux-complete.vim'
 " Plug 'davidhalter/jedi-vim'
 "Plug 'othree/vim-autocomplpop'
 
 " fzf
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
+" But if you want to install fzf as well using vim-plug:
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " }}}
 
