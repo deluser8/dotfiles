@@ -25,4 +25,5 @@ EOF
 # command-not-found
 #    $ZSH_CUSTOM/plugin/thefuck
 # load the theme
-antigen theme candy
+#antigen theme candy
+antigen theme romkatv/powerlevel10k
