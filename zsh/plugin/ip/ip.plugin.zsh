@@ -8,13 +8,13 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
                 cmd="$cmd dev $1"
             fi
             $SHELL -c $cmd | \
-                sed -r "s/^(\S*):.*$/\n${purple}\1${reset}/g" | \
-                sed -r "s/\s+ether\s+(\S*)/📘  \1/g" | \
-                sed -r "s/.*inet6?\s+([^\/]+)(\/[0-9]+)?.*/📶  \1 \2/g" | \
+                gsed -r "s/^(\S*):.*$/\n${purple}\1${reset}/g" | \
+                gsed -r "s/\s+ether\s+(\S*)/📘  \1/g" | \
+                gsed -r "s/.*inet6?\s+([^\/]+)(\/[0-9]+)?.*/📶  \1 \2/g" | \
                 grep -v valid_lft | \
-                sed "/^${purple}.*@/,/^$/d" | \
-                sed "1{/^$/d}" | \
-                sed "\${/^$/d}"
+                gsed "/^${purple}.*@/,/^$/d" | \
+                gsed "1{/^$/d}" | \
+                gsed "\${/^$/d}"
         else
             networksetup -listallhardwareports | \
                 sed -r "s/Hardware Port: (.*)/${purple}\1${reset}/g" | \
