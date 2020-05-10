@@ -17,12 +17,15 @@
     ~/.tmux: tmux/tmux
 
     # vim
-    ~/.vim: vim/vim
+    # ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
 
 
     # shell
     ~/.zshrc: zshrc
+
+    # p10k
+    ~/.p10k.zsh: p10k/p10k.zsh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
