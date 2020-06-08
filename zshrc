@@ -21,7 +21,7 @@ antigen apply
 
 #load extra configurations
 test -e "${HOME}/.extra" && source "$HOME/.extra"
-eval $(thefuck --alias) 
+#eval $(thefuck --alias) 
 # # enable shell integration only when using iTerm2
 # $DOTFILES/bin/isiterm2 && source $DOTFILES/iterm2/shell-integration
 # 
