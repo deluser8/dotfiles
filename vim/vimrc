@@ -16,6 +16,7 @@ augroup mixin
 " turn hybrid line numbers on
     set number relativenumber
     set nu rnu
+    set mouse=a
     set showcmd
     set incsearch
     set hlsearch

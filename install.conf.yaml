@@ -28,5 +28,24 @@
     ~/.p10k.zsh: p10k/p10k.zsh
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
+    -
+        command: curl -fL git.io/antigen -o shell/zsh/antigen.zsh
+        description: Downloading antigen
+    -
+        command: 'curl -fL https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o vim/vim/autoload/plug.vim'
+        description: Downloading vim-plug
+    -
+        command: bash iterm2/it2install
+        description: Downloading iterm2 utilities
+
+- shell:
+    - [zsh -ic 'antigen update && antigen reset', Installing antigen bundles]
+    - [vim +PlugInstall +qall </dev/tty, Installing vim plugins]
+    - [tmux/tmux/plugins/tpm/scripts/install_plugins.sh, Installing tmux plugins]
+
+- shell:
+    -
+        command: '[ "$SHELL" != `which zsh` ] && chsh -s `which zsh` || true'
+        description: Changing default shell
 

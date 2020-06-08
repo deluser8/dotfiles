@@ -186,7 +186,7 @@ main() {
 
 }
 
-main
+#main
 
 zsh <<EOF
     source $HOME/.zshrc
