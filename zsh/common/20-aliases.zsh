@@ -72,7 +72,14 @@ alias python3="/usr/local/Cellar/python/3.7.7/bin/python3"
 # IPython3
 
 # vim
-alias v=nvim
+#alias v=nvim
 
+if [ $commands[nvim] ]
+then
+    alias v=nvim
+elif [ $commands[vim] ]
+then
+    alias v=vim
+fi
 ## ag
 alias agb="ag -A 5 -B 5"
