@@ -63,10 +63,11 @@ alias typora="open -a typora"
 
 # python
 #
-alias py="/usr/local/Cellar/python/3.7.7/bin/python3"
-alias py2=python
-alias py3="/usr/local/Cellar/python/3.7.7/bin/python3"
-alias python3="/usr/local/Cellar/python/3.7.7/bin/python3"
+alias py2=python2
+alias py3=python3
+#alias py="/usr/local/Cellar/python/3.7.7/bin/python3"
+#alias py3="/usr/local/Cellar/python/3.7.7/bin/python3"
+#alias python3="/usr/local/Cellar/python/3.7.7/bin/python3"
 
 
 # IPython3
