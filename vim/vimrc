@@ -206,8 +206,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 
 " Auto complete
-" Plug 'vim-scripts/L9'
-" Plug 'vim-scripts/AutoComplPop'
 
 if !has('nvim')
     Plug 'Valloric/YouCompleteMe'
