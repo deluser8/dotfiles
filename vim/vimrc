@@ -233,3 +233,4 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 " }}}
 
+set background=dark

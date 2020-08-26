@@ -20,6 +20,10 @@
     # ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
 
+    # neovim
+
+    ~/.config/nvim/coc-settings.json : nvim/coc-settings.json
+    ~/.config/nvim/init.vim : nvim/init.vim
 
     # shell
     ~/.zshrc: zshrc

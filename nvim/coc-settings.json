@@ -1,0 +1,18 @@
+{
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "efm": {
+            "command": "~/go/bin/efm-langserver",
+            "args": ["-c", "~/.config/efm-langserver/config.yaml"],
+            "filetypes": ["vim", "eruby", "markdown"]
+        }
+    },
+    "suggest.snippetIndicator": "►",
+    "suggest.noselect": false,
+    "python.jediEnabled": false
+}
