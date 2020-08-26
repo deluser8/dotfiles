@@ -207,9 +207,10 @@ Plug 'jiangmiao/auto-pairs'
 
 " Auto complete
 
-if !has('nvim')
-    Plug 'Valloric/YouCompleteMe'
-elseif has('nvim')
+
+"if !has('nvim')
+"    Plug 'Valloric/YouCompleteMe'
+if has('nvim')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
