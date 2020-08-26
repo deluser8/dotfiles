@@ -9,6 +9,9 @@ augroup encoding
     set fileencodings=utf-8,ucs-bom,utf-16,gbk,big5,gb18030,latin1,cp936
 augroup end
 
+" set color
+autocmd vimenter * colorscheme gruvbox
+
 augroup mixin
     autocmd!
     syntax on
@@ -197,6 +200,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
+
+" Color scheme
+Plug 'morhetz/gruvbox'
 
 " Code navigation
 Plug 'scrooloose/nerdtree'
