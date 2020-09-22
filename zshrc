@@ -15,6 +15,9 @@ for config_file ($ZSH_CUSTOM/common/*.zsh(N)); do
 done
 unset config_file
 
+
+setopt no_nomatch
+
 # apply antigen configurations
 # remember that all configurations above will be cached
 antigen apply
