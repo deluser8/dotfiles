@@ -14,7 +14,6 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux-macos.conf: tmux/tmux-macos.conf
     ~/.tmux-linux.conf: tmux/tmux-linux.conf
-    ~/.tmux: tmux/tmux
 
     # vim
     # ~/.vim: vim/vim
