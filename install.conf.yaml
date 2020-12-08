@@ -21,8 +21,15 @@
 
     # neovim
 
-    ~/.config/nvim/coc-settings.json : nvim/coc-settings.json
-    ~/.config/nvim/init.vim : nvim/init.vim
+    ~/.config/nvim/: 
+        path: nvim/
+        create: true
+    ~/.config/nvim/coc-settings.json: 
+        path: nvim/coc-settings.json
+        create: true
+    ~/.config/nvim/init.vim: 
+        path: nvim/init.vim
+        create: true
 
     # shell
     ~/.zshrc: zshrc
