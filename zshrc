@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 #
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -7,8 +6,6 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-=======
->>>>>>> c5eaabe6643a67322b57c85239699d987391a7ea
 
 export DOTFILES=$HOME/.dotfiles
 export ZSH_CUSTOM=$DOTFILES/zsh
@@ -37,26 +34,6 @@ test -e "${HOME}/.extra" && source "$HOME/.extra"
 
 # alias gcd1="git clone --depth=1"
 
-<<<<<<< HEAD
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/lancer/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/lancer/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/lancer/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/lancer/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-
-[[ -s "/home/lancer/.gvm/scripts/gvm" ]] && source "/home/lancer/.gvm/scripts/gvm"
-=======
->>>>>>> c5eaabe6643a67322b57c85239699d987391a7ea
