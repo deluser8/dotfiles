@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 #
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -6,6 +7,8 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+=======
+>>>>>>> c5eaabe6643a67322b57c85239699d987391a7ea
 
 export DOTFILES=$HOME/.dotfiles
 export ZSH_CUSTOM=$DOTFILES/zsh
@@ -16,6 +19,9 @@ for config_file ($ZSH_CUSTOM/common/*.zsh(N)); do
   source $config_file
 done
 unset config_file
+
+
+setopt no_nomatch
 
 # apply antigen configurations
 # remember that all configurations above will be cached
@@ -31,6 +37,7 @@ test -e "${HOME}/.extra" && source "$HOME/.extra"
 
 # alias gcd1="git clone --depth=1"
 
+<<<<<<< HEAD
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -51,3 +58,5 @@ unset __conda_setup
 
 
 [[ -s "/home/lancer/.gvm/scripts/gvm" ]] && source "/home/lancer/.gvm/scripts/gvm"
+=======
+>>>>>>> c5eaabe6643a67322b57c85239699d987391a7ea
